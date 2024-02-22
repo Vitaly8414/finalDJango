@@ -1,0 +1,9 @@
+{% extends 'myapp2/base.html' %}
+
+{% block content %}
+  <h2>Order Detail</h2>
+  <p>Products: {{ order.products }}</p>
+  <p>Total_amount: {{ order.total_amountn }}</p>
+  <p>Order_date: {{ order.order_date }}</p>
+{% endblock %}
+

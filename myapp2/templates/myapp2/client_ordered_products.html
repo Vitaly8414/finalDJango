@@ -1,0 +1,15 @@
+{% extends 'myapp2/base.html' %}
+
+{% block content %}
+  <h2>{{ client.name }}'s Ordered Products (Last {{ days }} Days)</h2>
+
+  {% if ordered_products %}
+    <ul>
+      {% for product in ordered_products %}
+        <li>{{ product.name }} - {{ product.price }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No ordered products available for {{ client.name }} in the last {{ days }} days.</p>
+  {% endif %}
+{% endblock %}

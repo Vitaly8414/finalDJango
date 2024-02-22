@@ -1,0 +1,27 @@
+{% extends 'myapp2/base.html' %}
+
+{% block content %}
+  <h2>Order List</h2>
+  <h1>Ordered Products List</h1>
+
+  <h2>Ordered in the Last 7 Days (Week)</h2>
+  <ul>
+      {% for product in products_week %}
+          <li>{{ product.name }}</li>
+      {% endfor %}
+  </ul>
+
+  <h2>Ordered in the Last 30 Days (Month)</h2>
+  <ul>
+      {% for product in products_month %}
+          <li>{{ product.name }}</li>
+      {% endfor %}
+  </ul>
+
+  <h2>Ordered in the Last 365 Days (Year)</h2>
+  <ul>
+      {% for product in products_year %}
+          <li>{{ product.name }}</li>
+      {% endfor %}
+  </ul>
+{% endblock %}

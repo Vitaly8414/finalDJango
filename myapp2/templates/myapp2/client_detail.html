@@ -1,0 +1,10 @@
+{% extends 'myapp2/base.html' %}
+
+{% block content %}
+  <h2>Client Detail</h2>
+  <p>Name: {{ client.name }}</p>
+  <p>Email: {{ client.email }}</p>
+  <p>Phone Number: {{ client.phone_number }}</p>
+  <p>Address: {{ client.address }}</p>
+  <p>Registration Date: {{ client.registration_date }}</p>
+{% endblock %}

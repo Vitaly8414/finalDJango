@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Myapp2 homework2_and_3{% endblock %}</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'client_list' %}">Clients</a></li>
+            {% for client in clients %}
+                <li><a href="{% url 'client_detail' pk=client.pk %}">Client_detail</a></li>
+            {% endfor %}
+            {% comment %} <li><a href="{% url 'client_form' %}">Client_forml</a></li> {% endcomment %}
+            <li><a href="{% url 'client_ordered_products' %}">Client_ordered_products</a></li>
+            <li><a href="{% url 'client_orders' %}">Client_orders</a></li>
+            <li><a href="{% url 'product_list' %}">Products</a></li>
+            <li><a href="{% url 'product_added' %}">Product_added</a></li>
+            <li><a href="{% url 'add_product' %}">Add_product</a></li>
+            <li><a href="{% url 'product_detail' %}">Product_detail</a></li>
+            {% comment %} <li><a href="{% url 'product_form' %}">Product_form</a></li> {% endcomment %}
+            <li><a href="{% url 'order_list' %}">Orders</a></li>
+            <li><a href="{% url 'order_detail' %}">Order_detail</a></li>
+            {% comment %} <li><a href="{% url 'order_form' %}">Order_form</a></li> {% endcomment %}
+            <li><a href="{% url 'error' %}">Error</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
